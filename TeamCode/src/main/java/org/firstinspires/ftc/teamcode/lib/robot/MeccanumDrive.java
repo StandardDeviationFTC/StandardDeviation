@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.lib.robot;
 
 public class MeccanumDrive {
 
-    private static final float MAX_POWER_PER_SECOND = 5f;
+    private float maxPowerPerSecond;
 
     private class PowerController {
 
@@ -20,9 +20,9 @@ public class MeccanumDrive {
             float seconds = (System.currentTimeMillis() - lastTimeMillis) / 1000.0f;
             float powerPerSecond = (targetPower - lastPower) / seconds;
 
-            if(Math.abs(powerPerSecond) > MAX_POWER_PER_SECOND) {
+            if(Math.abs(powerPerSecond) > maxPowerPerSecond) {
                 int direction = (int) (Math.abs(powerPerSecond) / powerPerSecond);
-                lastPower += direction * MAX_POWER_PER_SECOND * seconds;
+                lastPower += direction * maxPowerPerSecond * seconds;
             } else {
                 lastPower = targetPower;
             }
@@ -44,8 +44,9 @@ public class MeccanumDrive {
     private PowerController frontRightPower;
     private PowerController backRightPower;
 
-    public MeccanumDrive(Bot robot) {
+    public MeccanumDrive(Bot robot, float maxPowerPerSecond) {
         this.robot = robot;
+        this.maxPowerPerSecond = maxPowerPerSecond;
         this.frontLeftPower = new PowerController();
         this.backLeftPower = new PowerController();
         this.frontRightPower = new PowerController();
@@ -78,8 +79,8 @@ public class MeccanumDrive {
         frontLeftPower.setPower(leftPower + strafe);
         backLeftPower.setPower(leftPower - strafe);
 
-        frontRightPower.setPower(rightPower + strafe);
-        backRightPower.setPower(rightPower - strafe);
+        frontRightPower.setPower(rightPower - strafe);
+        backRightPower.setPower(rightPower + strafe);
     }
 
 }

@@ -26,9 +26,21 @@ public class Constants {
     public static final float ENCODER_COUNTS_PER_INCH = ENCODER_COUNTS_PER_REVOLUTION / INCHES_PER_REVOLUTION;
 
     public static final float AUTO_TURN_HEADING_TOLERANCE_DEG_PER_SECOND = 0.1f;
-    public static final float AUTO_DRIVE_DISTANCE_TOLERANCE_COUNTS_PER_SECOND = 0.5f;
+    public static final float AUTO_DRIVE_DISTANCE_TOLERANCE_INCHES_PER_SECOND = 0.2f;
 
     public static final float AUTO_TURN_HEADING_TOLERANCE_DEG = 1;
-    public static final float AUTO_DRIVE_DISTANCE_TOLERANCE_COUNTS = 0.5f * ENCODER_COUNTS_PER_INCH;
+    public static final float AUTO_DRIVE_DISTANCE_TOLERANCE_INCHES = 0.5f;
+
+    public static final float LIFT_COUNTS_PER_SECOND = 5;
+    public static final float LEFT_CLAW_CLOSED_POSITION = 0.52f;
+    public static final float RIGHT_CLAW_CLOSED_POSITION = 0.52f;
+    public static final float CLAW_CLOSED_OFFSET = 0.02f;
+    public static final float FLIPPER_START_POSITION = 0;
+    public static final float CLAW_ACTUATE_DISTANCE = 0.2f;
+    public static final float FLIPPER_ACTUATE_DISTANCE = 0.65f;
+
+    public static final float MAX_POWER_PER_SECOND = 3f;
+
+    public static final float MAX_MOTOR_SPEED = 0.8f;
 
 }

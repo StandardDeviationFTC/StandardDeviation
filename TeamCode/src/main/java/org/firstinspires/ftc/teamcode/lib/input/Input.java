@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 public enum Input {
     SQUARE(pad -> toFloat(pad.square)), TRIANGLE(pad -> toFloat(pad.triangle)),
-    CIRCLE(pad -> toFloat(pad.circle)), X(pad -> toFloat(pad.x)),
+    CIRCLE(pad -> toFloat(pad.circle)), X(pad -> toFloat(pad.cross)),
     LT(pad -> pad.left_trigger), RT(pad -> pad.right_trigger),
     LB(pad -> toFloat(pad.left_bumper)), RB(pad -> toFloat(pad.right_bumper)),
     DPAD_LEFT(pad -> toFloat(pad.dpad_left)), DPAD_RIGHT(pad -> toFloat(pad.dpad_right)),
